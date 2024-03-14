@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap');
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+textarea {
+  resize: none;
+}
+
+/* background */
+.bg-wave {
+  position: relative;
+  height: 28%;
+}
+
+.curve {
+  position: absolute;
+  height: 17vh;
+  width: 100%;
+  bottom: 0;
+}
+
+.curve::before {
+  content: '';
+  display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+  width: 61%;
+  height: 100%;
+  transform: translate(73.7%, 50%);
+  z-index: 2;
+}
+
+.curve::after {
+  content: '';
+  display: block;
+  position: absolute;
+  border-radius: 100% 50%;
+  width: 50%;
+  height: 100%;
+  transform: translate(0%, 35%);
+  z-index: 1;
+}
+
+/* projectdetails transition */
+.project-screenshot {
+  opacity: 0;
+}
+
+.project-content {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.project-stack {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+/*
+.slide-in {
+  transform: translateX(0);
+  opacity: 1;
+} */
+
+.observe-screenshot {
+  transition: opacity 2s ease-in-out;
+  opacity: 1;
+}
+.observe-content {
+  transition: all 2s ease-in-out 0.8s;
+  transform: translateX(0);
+  opacity: 1;
+}
+.observe-stack {
+  transition: all 2s ease-in-out;
+  transform: translateX(0);
+  opacity: 1;
+}
+
+#about-section ul {
+  padding: 8px;
+  padding-left: 28px;
+  list-style-type: disc;
+  margin-bottom: 30px;
+}
+
+#about-section li {
+  padding: 8px 0px;
+}
+
+#about-section a {
+  text-decoration-line: underline;
+}
+
+#about-section a:hover {
+  color: cadetblue;
+}
+
+#contact-form label {
+  @apply font-semibold;
+}
+
+#contact-form input,
+textarea {
+  @apply rounded-md p-2 border border-black/50;
+}
+
+input:focus textarea:focus {
+  @apply border-main-yellow border-2;
+}
+
+#contact-form span {
+  @apply text-sm px-1 py-[-1px] text-red-500;
+}
