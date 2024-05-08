@@ -7,6 +7,8 @@ import Footer from '@/components/layout/Footer';
 import SocialMediaGroup from '@/components/layout/SocialMediaGroup';
 import Navbar from '@/components/layout/Navbar';
 
+import { Analytics } from '@vercel/analytics/react';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -27,6 +29,7 @@ export default function RootLayout({
         <SocialMediaTab />
         <Background>{children}</Background>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
